@@ -1,5 +1,5 @@
 * {
-  /* box-sizing: border-box; */
+  box-sizing: border-box;
 }
 
 :focus {
@@ -7,7 +7,7 @@
 }
 
 body {
-  /* TODO */
+  background-image: linear-gradient(to left, #ff3300 , yellow);
 }
 
 input {
@@ -15,7 +15,10 @@ input {
 }
 
 .search-container {
- /* TODO */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 .search-container input,
 .search-container .suggestions {

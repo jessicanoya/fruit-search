@@ -1,5 +1,5 @@
 const input = document.querySelector("#fruit");
-const suggestions = document.querySelector(".suggestions ul");
+const suggestions = document.querySelector(".suggestions");
 
 const fruit = [
   "Apple",
@@ -102,31 +102,37 @@ function searchHandler(event) {
   // DEBUG
   // console.log(inputValue)
   const searchResults = search(inputValue);
-  showSuggestions(searchResults, inputValue);
+  // DEBUG
+  // console.log(searchResults)
+  showSuggestions(searchResults);
 }
 
 // Function to display suggestions
-function showSuggestions(results, inputVal) {
+function showSuggestions(results) {
   // Clear previous suggestions
   suggestions.innerHTML = "";
 
   // Display new suggestions
   results.forEach((result) => {
-    const option = document.createElement("option"); // Create an option
-    option.textContent = result; // Set text content to the result
+    const li = document.createElement("li"); // Create an option
+    li.textContent = result; // Set text content to the result
     // DEBUG
     // console.log(result);
-    suggestions.appendChild(option); // Append list item to suggestions list
+    suggestions.appendChild(li); // Append list item to suggestions list
   });
 }
 
 function useSuggestion(event) {
-  const selectedFruit = event.target.value;
+  const selectedFruit = event.target.innerHTML;
+  // DEBUG
+  console.log(event)
   if (selectedFruit) {
     input.value = selectedFruit;
   }
   suggestions.innerHTML = "";
 }
 
+// Create an event listener that will trigger when a user types
 input.addEventListener("keyup", searchHandler);
+
 suggestions.addEventListener("click", useSuggestion);
