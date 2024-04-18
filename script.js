@@ -125,7 +125,7 @@ function showSuggestions(results) {
 function useSuggestion(event) {
   const selectedFruit = event.target.innerHTML;
   // DEBUG
-  console.log(event.target);
+  // console.log(event.target);
   if (selectedFruit) {
     input.value = selectedFruit;
   }
