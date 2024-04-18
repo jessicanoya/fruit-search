@@ -114,18 +114,18 @@ function showSuggestions(results) {
 
   // Display new suggestions
   results.forEach((result) => {
-    const li = document.createElement("li"); // Create an option
-    li.textContent = result; // Set text content to the result
+    const ul = document.createElement("ul"); // Create an option
+    ul.textContent = result; // Set text content to the result
     // DEBUG
     // console.log(result);
-    suggestions.appendChild(li); // Append list item to suggestions list
+    suggestions.appendChild(ul); // Append list item to suggestions list
   });
 }
 
 function useSuggestion(event) {
   const selectedFruit = event.target.innerHTML;
   // DEBUG
-  console.log(event)
+  console.log(event.target);
   if (selectedFruit) {
     input.value = selectedFruit;
   }
