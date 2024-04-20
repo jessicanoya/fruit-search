@@ -19,7 +19,7 @@ body {
 input {
   box-sizing: border-box;
   font-size: 16px;
-  padding: 14px 20px 12px 45px;
+  padding: 12px 12px;
   border: none;
   border-bottom: 2px solid #ff7300;
   background-color: #e4bc51;
